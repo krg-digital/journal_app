@@ -1,4 +1,4 @@
-from database import add_entry, get_entries
+from database import create_table, add_entry, get_entries
 
 
 menu = """Please select one of the following options:
@@ -17,17 +17,12 @@ def prompt_new_entry():
 
 def view_entries(entries):
     for entry in entries:
+        # each row in the result is a tuple,
+        # not a dictionary.
         print(f"{entry['date']}:\n{entry['content']}\n\n")
 
 print(welcome)
-
-# Sample 'entries' list.
-# entries = [
-#     {"content": "Today I started learning programming.", "date": "01-01-2020"},
-#     {"content": "I created my first SQLite database!", "date": "02-01-2020"},
-#     {"content": "I finished writing my programming diary application.", "date": "03-01-2020"},
-#     {"content": "Today I'm going to continue learning programming!", "date": "04-01-2020"},
-# ]
+create_table()
 
 # ':=' is the walrus operator.
 # python >= 3.8 is require for its use. 
