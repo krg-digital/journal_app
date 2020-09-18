@@ -1,3 +1,6 @@
+from database import add_entry, view_entries
+
+
 menu = """Please select one of the following options:
 1) Add new entry for today.
 2) View entries.
@@ -16,11 +19,12 @@ print(welcome)
 #     {"content": "Today I'm going to continue learning programming!", "date": "04-01-2020"},
 # ]
 
-# ':=' is the walrus operator. 
+# ':=' is the walrus operator.
+# python >= 3.8 is require for its use. 
 while (user_input := input(menu)) != "3":
     if user_input == "1":
-        print("Adding...")
+        add_entry()
     elif user_input == "2":
-        print("Viewing...")
+        view_entries()
     else:
         print("Invalid option, please try again!")

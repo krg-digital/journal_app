@@ -2,7 +2,7 @@ entries = []
 
 
 def add_entry():
-    entry_content = input("What have you learned today?")
+    entry_content = input("What have you learned today?\n")
     entry_date = input("Enter the date: ")
 
     entries.append({"content": entry_content, "date": entry_date})
